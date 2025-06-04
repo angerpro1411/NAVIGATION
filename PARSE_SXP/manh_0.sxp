@@ -1,0 +1,118 @@
+(scene "manh_0"
+
+  (dim 1100 1600)
+
+  (house "maison1"
+    (color "orange")
+    (polyline
+      (point 330 4)
+      (point 500 4)
+      (point 500 250)
+      (point 330 250)
+    )
+  )
+
+  (house "maison2"
+    (color "gray")
+    (polyline
+      (point 590 330)
+      (point 910 260)
+      (point 960 470)
+      (point 640 540)
+    )
+  )
+
+  (house "maison3"
+    (color "orange")
+    (polyline
+      (point 330 1150)
+      (point 500 1150)
+      (point 500 1350)
+      (point 330 1350)
+    )
+  )
+
+  (house "minimaison"
+    (color "white1")
+    (polyline
+      (point 950  700)
+      (point 1000 700)
+      (point 1000 800)
+      (point 950  800)
+    )
+  )
+
+  (road "road1"
+    (color "white1")
+    (width 80)
+    (polyline
+      (point 550 0)
+      (point 550 850)
+    )
+  )
+
+  (road "road2"
+    (color "white1")
+    (width 80)
+    (polyline
+      (point 0 850)
+      (point 500 850)
+    )
+  )
+
+  (road "road3"
+    (color "white1")
+    (width 80)
+    (polyline
+      (point 500 850)
+      (point 1100 850)
+    )
+  )
+
+  (road "road4"
+    (color "white1")
+    (width 80)
+    (polyline
+      (point 550 850)
+      (point 550 1600)
+    )
+  )
+
+  (road "road5"
+    (color "white1")
+    (width 80)
+    (polyline
+      (point  950 1600)
+      (point 1100 1400)
+    )
+  )
+
+  (vegetation "tree1"
+    (color "green1")
+    (polycircle
+      (circle (center 200 420) (radius 100))
+    )
+  )
+
+  (vegetation "tree2"
+    (color "green1")
+    (polycircle
+      (circle (center 750 130) (radius 100))
+    )
+  )
+
+  (vegetation "tree3"
+    (color "green2")
+    (polycircle
+      (circle (center 550 850) (radius 150))
+    )
+  )
+
+  (vegetation "tree4"
+    (color "green2")
+    (polycircle
+      (circle (center 820 1180) (radius 100))
+    )
+  )
+
+)
