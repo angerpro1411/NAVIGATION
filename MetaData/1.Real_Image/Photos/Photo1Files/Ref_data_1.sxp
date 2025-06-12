@@ -1,0 +1,36 @@
+(scene "1.png"
+
+  (object's-number 4)
+
+  (house "h1"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate )
+    )
+  )
+
+  (house "h2"
+    (color "white")
+    (polyline 
+      (perimeter  )
+      (coordinate )
+    )
+  )
+
+  (house "h3"
+    (color "white")
+    (polyline 
+      (perimeter  )
+      (coordinate )
+    )
+  )
+
+  (house "h4"
+    (color "white")
+    (polyline 
+      (perimeter  )
+      (coordinate )
+    )
+  )
+)

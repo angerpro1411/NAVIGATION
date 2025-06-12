@@ -1,0 +1,36 @@
+(scene 1.png
+
+  (House
+    (color White)
+    (rectangle
+      (perimeter 1297.5)
+      (coordinate (-85.0,-14.0))
+    )
+  )
+
+  (House
+    (color No color)
+    (pentagon
+      (perimeter 1653.0)
+      (coordinate (-15.0,-1.0))
+    )
+  )
+
+  (House
+    (color White)
+    (hexagon
+      (perimeter 1619.5)
+      (coordinate (-68.0,45.0))
+    )
+  )
+
+  (Undefined Object
+    (color Orange)
+    (circle
+      (perimeter 754.0)
+      (coordinate (-3.0,60.0))
+    )
+  )
+
+  (object's-number 4)
+)

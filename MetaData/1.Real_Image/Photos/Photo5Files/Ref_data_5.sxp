@@ -1,0 +1,53 @@
+(scene "5.png"
+
+  (object's-number 11)
+
+  (house "h1"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (-157 -48))
+    )
+  )
+
+  (house "h2"
+    (color "yellow")
+    (polyline
+      (perimeter  )
+      (coordinate (-24 135))
+    )
+  )
+
+  (house "h3"
+    (color "yellow")
+    (polyline
+      (perimeter  )
+      (coordinate (25 -12))
+    )
+  )
+
+  (house "h4"
+    (color "yellow")
+    (polyline
+      (perimeter  )
+      (coordinate (25 -50))
+    )
+  )
+
+    (house "h5"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (158 -76))
+    )
+  )
+
+  (forest "v1"
+    (color "green")
+    (circle 
+      (perimeter  )
+      (coordinate (176 -8))
+    )
+  )
+        
+)

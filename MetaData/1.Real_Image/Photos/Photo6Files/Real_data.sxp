@@ -1,0 +1,140 @@
+(scene 6.png
+
+  (House
+    (color No color)
+    (hexagon
+      (perimeter 55.0)
+      (coordinate (-258.5,-100.0))
+    )
+  )
+
+  (House
+    (color No color)
+    (hexagon
+      (perimeter 6262.0)
+      (coordinate (-56.5,-80.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 400.0)
+      (coordinate (251.5,1.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 372.0)
+      (coordinate (-72.5,7.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (heptagon
+      (perimeter 934.0)
+      (coordinate (14.5,24.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 41.5)
+      (coordinate (281.5,5.0))
+    )
+  )
+
+  (House
+    (color No color)
+    (hexagon
+      (perimeter 2243.5)
+      (coordinate (135.5,23.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (heptagon
+      (perimeter 65.5)
+      (coordinate (136.5,49.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 58.0)
+      (coordinate (117.5,52.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 406.0)
+      (coordinate (-173.5,57.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 2501.5)
+      (coordinate (-270.5,34.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1419.5)
+      (coordinate (255.5,56.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 437.0)
+      (coordinate (158.5,101.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (heptagon
+      (perimeter 2743.5)
+      (coordinate (222.5,113.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (heptagon
+      (perimeter 216.0)
+      (coordinate (151.5,148.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 55.0)
+      (coordinate (-86.5,114.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 90.0)
+      (coordinate (-230.5,136.0))
+    )
+  )
+
+  (object's-number 17)
+)

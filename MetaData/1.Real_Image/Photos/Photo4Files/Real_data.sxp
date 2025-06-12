@@ -1,0 +1,60 @@
+(scene 4.png
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1898.0)
+      (coordinate (-59.0,-100.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1642.5)
+      (coordinate (44.0,-90.0))
+    )
+  )
+
+  (Undefined Object
+    (color Green)
+    (circle
+      (perimeter 450.0)
+      (coordinate (8.0,-25.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 666.0)
+      (coordinate (-120.0,-35.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 673.5)
+      (coordinate (9.0,24.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1058.5)
+      (coordinate (-136.0,64.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 2310.0)
+      (coordinate (21.0,86.0))
+    )
+  )
+
+  (object's-number 7)
+)

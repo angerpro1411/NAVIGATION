@@ -1,0 +1,52 @@
+(scene 5.png
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 582.5)
+      (coordinate (-219.5,-143.5))
+    )
+  )
+
+  (Undefined Object
+    (color White)
+    (circle
+      (perimeter 4636.0)
+      (coordinate (152.5,-88.5))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 376.5)
+      (coordinate (15.5,-9.5))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 4254.0)
+      (coordinate (-169.5,-4.5))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1179.5)
+      (coordinate (49.5,-13.5))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 798.0)
+      (coordinate (-32.5,137.5))
+    )
+  )
+
+  (object's-number 6)
+)

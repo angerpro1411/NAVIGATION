@@ -1,0 +1,92 @@
+(scene "4.png"
+
+  (object's-number 11)
+
+  (house "h1"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (-120 66))
+    )
+  )
+
+  (house "h2"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (-145 40))
+    )
+  )
+
+  (house "h3"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (20 33))
+    )
+  )
+
+  (house "h4"
+    (color "white")
+    (polyline
+      (perimeter  )
+      (coordinate (4 74))
+    )
+  )
+
+  (tree "v1"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (120 75))
+    )
+  )
+
+  (tree "v2"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (13 -30))
+    )
+  )
+
+  (tree "v3"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (42 -68))
+    )
+  )
+
+  (tree "v4"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (45 -105))
+    )
+  )
+
+  (tree "v5"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (-93 -93))
+    )
+  )
+
+  (tree "v6"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (47 -105))
+    )
+  )
+
+  (tree "v7"
+    (color "white")
+    (circle 
+      (perimeter  )
+      (coordinate (-120 -34))
+    )
+  )         
+)
