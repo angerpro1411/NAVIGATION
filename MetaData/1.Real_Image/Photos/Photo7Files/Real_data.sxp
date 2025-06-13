@@ -1,0 +1,52 @@
+(scene 7.png
+
+  (Tree
+    (color Green)
+    (circle
+      (perimeter 370.0)
+      (coordinate (-90.5,-110.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 1676.5)
+      (coordinate (-183.5,-13.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 460.0)
+      (coordinate (219.5,33.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 2833.0)
+      (coordinate (-9.5,13.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (circle
+      (perimeter 2443.5)
+      (coordinate (88.5,78.0))
+    )
+  )
+
+  (Undefined Object
+    (color No color)
+    (heptagon
+      (perimeter 2504.5)
+      (coordinate (-48.5,97.0))
+    )
+  )
+
+  (object's-number 6)
+)
