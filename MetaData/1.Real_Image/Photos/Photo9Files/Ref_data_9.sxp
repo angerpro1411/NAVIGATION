@@ -1,0 +1,61 @@
+(scene "9.png"
+
+  (object's-number 7)
+
+  (house "h1"
+    (color "Blue")
+    (polyline
+      (perimeter  )
+      (coordinate (-30 -106))
+    )
+  )
+
+  (forest "v1"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-172 -149))
+    )
+  )
+
+  (tree "v2"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-20 -173))
+    )
+  )
+
+  (tree "v3+"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (133 -100))
+    )
+  )
+
+  (tree "v4"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (174 16))
+    )
+  )
+
+  (hedge "v5"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-131 147))
+    )
+  )
+
+  (tree "v6"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-125 147))
+    )
+  )
+
+)

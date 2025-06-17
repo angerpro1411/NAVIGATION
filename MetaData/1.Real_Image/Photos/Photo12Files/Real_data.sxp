@@ -1,0 +1,60 @@
+(scene 12.png
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1142.5)
+      (coordinate (-164.0,-96.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 269.5)
+      (coordinate (-102.0,-22.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 692.5)
+      (coordinate (-81.0,46.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 1341.0)
+      (coordinate (126.0,64.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 337.5)
+      (coordinate (-3.0,69.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 2531.0)
+      (coordinate (49.0,81.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 342.0)
+      (coordinate (-53.0,114.5))
+    )
+  )
+
+  (object's-number 7)
+)

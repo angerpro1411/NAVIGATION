@@ -1,0 +1,60 @@
+(scene 8.png
+
+  (House
+    (color "No color")
+    (hexagon
+      (perimeter 572.0)
+      (coordinate (8.0,-92.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 2890.5)
+      (coordinate (-132.0,-65.5))
+    )
+  )
+
+  (House
+    (color "No color")
+    (pentagon
+      (perimeter 125.5)
+      (coordinate (-123.0,42.5))
+    )
+  )
+
+  (House
+    (color "Blue")
+    (hexagon
+      (perimeter 327.0)
+      (coordinate (168.0,94.5))
+    )
+  )
+
+  (House
+    (color "No color")
+    (pentagon
+      (perimeter 37.5)
+      (coordinate (-97.0,116.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 14.5)
+      (coordinate (114.0,111.5))
+    )
+  )
+
+  (House
+    (color "No color")
+    (hexagon
+      (perimeter 2262.0)
+      (coordinate (-21.0,106.5))
+    )
+  )
+
+  (object's-number 7)
+)

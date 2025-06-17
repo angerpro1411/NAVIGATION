@@ -1,7 +1,7 @@
 import cv2
 
 
-def backgr_removal(image,threshold_gr=75,kernel_size=11):
+def backgr_removal(image,threshold_gr=50,kernel_size=11):
 
     total_pixel_in_kernel = kernel_size*kernel_size
     Eighty_percent_kernel = int(total_pixel_in_kernel*0.8)
@@ -44,7 +44,7 @@ def backgr_removal(image,threshold_gr=75,kernel_size=11):
 
 
 # Load image and convert to HSV
-image = cv2.imread("8.png")
+image = cv2.imread("10.png")
 hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
 # Mouse callback function
@@ -58,9 +58,11 @@ cv2.imshow('HSV Image', hsv_image)
 cv2.imshow("orginal", image)
 cv2.setMouseCallback('HSV Image', show_hsv)
 
-filtered = backgr_removal(image)
+filtered_origin = backgr_removal(image)
 
-cv2.imshow("filtered", filtered)
+
+cv2.imshow("filtered", filtered_origin)
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

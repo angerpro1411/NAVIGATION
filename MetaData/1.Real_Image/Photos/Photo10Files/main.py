@@ -121,14 +121,19 @@ def imageCenter(image) :
     cv2.circle(image, (w//2, h//2), 7, (255, 0, 0), -1) #where w//2, h//2 are the required frame/image centeroid's XYcoordinates.
 
 def pixel_color(img,x,y) :
-    imgRGB = cv2.imread(img)
-    imgHSV = cv2.cvtColor(imgRGB,cv2.COLOR_BGR2HSV)
+    imgBGR = cv2.imread(img)
+    imgHSV = cv2.cvtColor(imgBGR,cv2.COLOR_BGR2HSV)
     #in order B G R
     #img[row,column], row means y, column means x
-    # b,g,r = imgRGB[int(x),int(y)]
+    # b,g,r = imgBGR[int(y),int(x)]
+
+
     # print(r,g,b)
     h,s,v = imgHSV[int(y),int(x)]
     # print(h,s,v)
+
+    low_white = np.array([0, 0, 200], np.uint8)     # [H, S, V]  
+    high_white = np.array([180, 30, 255], np.uint8)  
 
     #red
     redLower = np.array([136,87,111], np.uint8)
@@ -136,14 +141,8 @@ def pixel_color(img,x,y) :
 
 
     #green
-    # greenLower = np.array([25,40,72], np.uint8)
-    # greenUpper = np.array([102,255,255], np.uint8)
-
     greenLower = np.array([15, 40, 50])
-    greenUpper = np.array([179,116,104], np.uint8)    
-
-    # greenLower = np.array([35, 40, 60])
-    # greenUpper = np.array([85, 255, 255])    
+    greenUpper = np.array([179,116,104], np.uint8)   
 
     #blue
     blueLower = np.array([94,80,2], np.uint8)
@@ -161,6 +160,7 @@ def pixel_color(img,x,y) :
     purpleLower = np.array([130,80,80], np.uint8)
     purpleUpper = np.array([150,255,255], np.uint8)        
 
+    whiteCheck = all([h,s,v] >= low_white) and all([h,s,v] <= high_white)
     redCheck = all([h,s,v] >= redLower) and all([h,s,v] <= redUpper)
     greenCheck = all([h,s,v] >= greenLower) and all([h,s,v] <= greenUpper)
     blueCheck = all([h,s,v] >= blueLower) and all([h,s,v] <= blueUpper)
@@ -168,7 +168,9 @@ def pixel_color(img,x,y) :
     orangeCheck = all([h,s,v] >= orangeLower) and all([h,s,v] <= orangeUpper)
     purpleCheck = all([h,s,v] >= purpleLower) and all([h,s,v] <= purpleUpper)            
 
-    if redCheck == 1:
+    if whiteCheck == 1:
+        return "White"
+    elif redCheck == 1:
         return "Red"
     elif greenCheck == 1:
         return "Green"
@@ -181,9 +183,7 @@ def pixel_color(img,x,y) :
     elif purpleCheck == 1:
          return "Purple"
     else :
-        return "No color detected"
-    
-    return "No color detected"
+        return "No color"
 
 def adjustBrightness(img, factor = 1.2):
     imgHsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
@@ -306,6 +306,49 @@ def reduce_shadow(image,threshold_darkpixel=65,kernel_size=11,):
     # return new image
     return new_img
 
+
+#from the coodination potision of object, we calculate the angle between
+#2 vectors, first vector is drone towards east,
+#second vector is drone toward object as trigonomectric circle.
+def PositionDetector(x,y):
+    if x == 0 :
+        #north    
+        if y > 0 :
+            tanA = 99999
+        #south
+        elif y < 0 :
+            tanA = -99999
+        #center of photo
+        else :
+            tanA = 100000
+    else :
+        tanA = float(y/x)
+    return tanA  
+
+def LightBalance(image) :
+     image = cv2.equalizeHist(image)
+     return image
+
+def WriteName2File(fileName) :
+    file.writelines("(scene " + fileName)
+    file.write("\n")
+
+def WriteNumbObjectInTotal(objectNumb) :
+    file.write("\n")    
+    file.write("  (object's-number {})\n".format(objectNumb))
+    #write end file
+    file.write(")")
+
+def WriteObj2File(objectType, color, shape, perimeter,rX,rY):
+    file.write("\n")
+    file.writelines("  (" + objectType + "\n")
+    file.writelines("    (color " + "\"{}\")\n".format(color))
+    file.write("    ({}\n".format(shape))
+    file.write("      (perimeter {})\n".format(perimeter))
+    file.write("      (coordinate ({},{}))\n".format(rX,rY))
+    file.write("    )\n")
+    file.write("  )\n")
+  
 # With photos who includes complex backgr, but color difference between backgr and object is clear. 
 # We can use this func to remove back-gr.
 # Not effective with tooo bright or too dark photos 
@@ -345,66 +388,27 @@ def backgr_removal(image,threshold_gr=50,kernel_size=11):
     # return new image
     return image
 
-
-#from the coodination potision of object, we calculate the angle between
-#2 vectors, first vector is drone towards east,
-#second vector is drone toward object as trigonomectric circle.
-def PositionDetector(x,y):
-    if x == 0 :
-        #north    
-        if y > 0 :
-            tanA = 99999
-        #south
-        elif y < 0 :
-            tanA = -99999
-        #center of photo
-        else :
-            tanA = 100000
-    else :
-        tanA = float(y/x)
-    return tanA  
-
-def LightBalance(image) :
-     image = cv2.equalizeHist(image)
-     return image
-
-#create trackbar for canny edge detection threshold
-cv2.namedWindow("Parameters")
-cv2.createTrackbar("ThresLow","Parameters", 45, 255, nothing)
-cv2.createTrackbar("ThresHigh","Parameters", 164, 255, nothing)
-
-#create trackbar for kernel
-cv2.createTrackbar("kernel va1", "Parameters", 3, 10, nothing)
-cv2.createTrackbar("kernel va2", "Parameters", 3, 10, nothing)
-
-#create trackbar for espilon
-cv2.createTrackbar("Espilonx10000","Parameters",0,1200,nothing)
-
-#create trackbar for contour Area
-cv2.createTrackbar("AreaMin","Parameters",500,5000,nothing)
-cv2.createTrackbar("AreaMax","Parameters",2500,10000,nothing)
-
-#create trackbar for Filter
-cv2.createTrackbar("Spatial Window","Parameters",45,100,nothing)
-cv2.createTrackbar("Color Window","Parameters",60,100,nothing)
-
-# load the image and resize it to a smaller factor so that
-# the shapes can be approximated better
-
-fileName = "12.png"
+fileName = "10.png"
+NumberOfObj = 0
 
 image = cv2.imread(fileName)
+
 imageOrigin = image.copy()
 
 # image = reduce_shadow(image)
 #open a file to write results
-file = open("output.txt","a")
+file = open("Real_data.sxp","w")
+WriteName2File(fileName)
 
 #adjust brightness
 image = adjustBrightness(image)
 
 #get two first value of img.shape array
 (h,w) = image.shape[:2]
+
+
+imgContour = image.copy()
+
 
 #first parameter of this filter is spatial window radius
 #If sp is small, only nearby pixels affect the result — 
@@ -415,134 +419,107 @@ image = adjustBrightness(image)
 # Large sp parameter creates heavy calculation, slow calculation
 #   ,so the computer could take a lot of time to calculate it.
 #       Even the program crashes.
+
+
 BackGrRmv_Or_ShiftFil = 1
 if (BackGrRmv_Or_ShiftFil == 0) :
     filtered = cv2.pyrMeanShiftFiltering(image, 30, 45)   
 else : 
-    filtered = backgr_removal(image) 
+    filtered = backgr_removal(image)
 
 # applying different thresholding : START
 # techniques on the input image 
 gray = cv2.cvtColor(filtered, cv2.COLOR_BGR2GRAY)
 
 #Historical equalization
-gray = LightBalance(gray)
+gray = LightBalance(gray) 
+# applying different thresholding : END
+
+#canny edge detection
+edges1 = cv2.Canny(image=filtered,threshold1 = 19,threshold2 = 255)
+
+#closing image :: END
+#create variable for kernel trackbar
+
+kernel = np.ones((3,3), np.uint8)
+closing = cv2.morphologyEx(edges1, cv2.MORPH_CLOSE, kernel, iterations = 1)
 
 
-#loop for control contour detection and edge detection
-while True :
-    imgContour = image.copy()
+# find contours in the thresholded image
+cnts,hierarchy = cv2.findContours(closing, cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE)
 
+# initialize the shape detector and color labeler
+sd = ShapeDetector()
+cl = ColorLabeler()
 
+# loop over the contours
+for c in cnts:
     
+    #calculate contour area for removing small contour(noise)
+    area = cv2.contourArea(c)
+    areaMin = 210
 
-
-    #create variables for Filter Trackbars
-    SP = cv2.getTrackbarPos("Spatial Window","Parameters")
-    SR = cv2.getTrackbarPos("Color Window","Parameters")
-
-    # thresh1 = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, 
-    #                                         cv2.THRESH_BINARY, 199, 5) 
+    areaMax = 7129
     
-    # thresh2 = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
-    #                                         cv2.THRESH_BINARY, 199, 5)     
-    # applying different thresholding : END
+    Espilonx10000 = 100
+    espilon = Espilonx10000/10000
 
+    #put contour detection in a specific condition
+    if (area > areaMin and area < areaMax): # and area < areaMax :
+        # compute the center of the contour
+        M = cv2.moments(c)
+        cX = int((M["m10"] / M["m00"]) )
+        cY = int((M["m01"] / M["m00"]) )
 
-    #create variable for trackbar
-    ThresLow = cv2.getTrackbarPos("ThresLow","Parameters")
-    ThresHigh = cv2.getTrackbarPos("ThresHigh","Parameters")
-    
-    #canny edge detection
-    edges1 = cv2.Canny(image=filtered,threshold1 = ThresLow,threshold2 = ThresHigh)
+        #Real position compare to drone
+        rX = cX - w/2
+        rY = h/2 - cY
 
-    #closing image :: END
-    #create variable for kernel trackbar
-    Kernel_Trackbar1 = cv2.getTrackbarPos("kernel va1", "Parameters")
-    Kernel_Trackbar2 = cv2.getTrackbarPos("kernel va2", "Parameters")    
-    
-    kernel = np.ones((Kernel_Trackbar1,Kernel_Trackbar2), np.uint8)
-    closing = cv2.morphologyEx(edges1, cv2.MORPH_CLOSE, kernel, iterations = 1)
-    
-    
-    # find contours in the thresholded image
-    cnts,hierarchy = cv2.findContours(closing, cv2.RETR_EXTERNAL,
-        cv2.CHAIN_APPROX_SIMPLE)
-    
-    # initialize the shape detector and color labeler
-    sd = ShapeDetector()
-    cl = ColorLabeler()
-
-    # loop over the contours
-    for c in cnts:
+        # detect the shape of the contour and label the color
+        (shape,approx) = sd.detect(c,espilon)
         
-        #calculate contour area for removing small contour(noise)
-        area = cv2.contourArea(c)
-        areaMin = cv2.getTrackbarPos("AreaMin","Parameters")
+        color = pixel_color(fileName,cX,cY)
 
-        areaMax = cv2.getTrackbarPos("AreaMax","Parameters")
+        #object labeler
+        object = ObjectLabeler(shape,color)
+
+        # multiply the contour (x, y)-coordinates by the resize ratio,
+        # then draw the contours and the name of the shape and labeled
+        # color on the image
+        c = c.astype("float")
+        c = c.astype("int")
+        text = "{} {}".format(color, shape)
+        cv2.drawContours(imgContour, [approx], -1, (0, 255, 0), 2)
+
+        cv2.putText(imgContour, text, (cX, cY),
+            cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
+
+        #Print the new coordination offset with center of image.
+        cv2.putText(imgContour,"({},{})".format(rX,rY),(cX, cY+20),
+            cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
         
-        Espilonx10000 = cv2.getTrackbarPos("Espilonx10000","Parameters")
-        espilon = Espilonx10000/10000
+        cv2.putText(imgContour, object, (cX, cY+40),
+            cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
 
-        #put contour detection in a specific condition
+        cv2.putText(imgContour, " tanA={:.2f}".format(PositionDetector(rX,rY)), (cX, cY+60),
+            cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2) 
 
-        #check contour is closed or not, but not effective with complicated photos.
-        # if cv2.isContourConvex(c):
+        #write results to file
+        WriteObj2File(objectType=object,color=color,shape=shape,perimeter=area,rX=rX,rY=rY)
+        NumberOfObj = NumberOfObj + 1   
 
-        if (area > areaMin and area < areaMax): # and area < areaMax :
-            # compute the center of the contour
-            M = cv2.moments(c)
-            cX = int((M["m10"] / M["m00"]) )
-            cY = int((M["m01"] / M["m00"]) )
+WriteNumbObjectInTotal(NumberOfObj)        
 
-            #Real position compare to drone
-            rX = cX - w/2
-            rY = h/2 - cY
 
-            # detect the shape of the contour and label the color
-            (shape,approx) = sd.detect(c,espilon)
-            
-            color = pixel_color(fileName,cX,cY)
+# show the output image
 
-            #object labeler
-            object = ObjectLabeler(shape,color)
+imgStack = stackImages(1,([imageOrigin,gray,filtered],[edges1,closing,imgContour]))
 
-            # multiply the contour (x, y)-coordinates by the resize ratio,
-            # then draw the contours and the name of the shape and labeled
-            # color on the image
-            c = c.astype("float")
-            c = c.astype("int")
-            text = "{} {}".format(color, shape)
-            cv2.drawContours(imgContour, [approx], -1, (0, 255, 0), 2)
-
-            cv2.putText(imgContour, text, (cX, cY),
-                cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
-
-            #Print the real coordination offset with top-left corner.
-            # cv2.putText(imgContour,"({},{})".format(cX,cY),(cX, cY+40),
-            # 	cv2.FONT_HERSHEY_PLAIN, 0.5, (255, 255, 0), 2)
-
-            #Print the new coordination offset with center of image.
-            cv2.putText(imgContour,"({},{})".format(rX,rY),(cX, cY+20),
-                cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
-            
-            cv2.putText(imgContour, object, (cX, cY+40),
-                cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2)
-
-            cv2.putText(imgContour, " tanA={:.2f}".format(PositionDetector(rX,rY)), (cX, cY+60),
-                cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 0), 2) 
-
-    # show the output image
-
-    imgStack = stackImages(1,([imageOrigin,gray,filtered],[edges1,closing,imgContour]))
-
-    cv2.imshow("ImageStack", imgStack)
-    cv2.imshow("Image",imgContour)
-
-    # cv2.imshow("MeanC",thresh1)
-    # cv2.imshow("Gaussian",thresh2)
-
-    cv2.waitKey(300)
+cv2.imshow("ImageStack", imgStack)
+cv2.imshow("Image",imgContour)
 
 file.close()
+
+cv2.waitKey(0)
+
