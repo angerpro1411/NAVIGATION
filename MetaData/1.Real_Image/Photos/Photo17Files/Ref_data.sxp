@@ -1,0 +1,69 @@
+(scene "17.png"
+
+  (object's-number 8)
+
+  (house "h1"
+    (color "blue")
+    (polyline
+      (perimeter  )
+      (coordinate (160 120))
+    )
+  )
+
+  (house "h2"
+    (color "blue")
+    (polyline
+      (perimeter  )
+      (coordinate (-100 54))
+    )
+  )
+
+  (house "h3"
+    (color "blue")
+    (polyline
+      (perimeter  )
+      (coordinate (50 -140))
+    )
+  )
+
+  (tree "v1"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-180 76))
+    )
+  )
+
+  (tree "v2"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-180 123))
+    )
+  )
+
+  (tree "v3"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-200 30))
+    )
+  )
+
+  (tree "v4"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-200 -12))
+    )
+  )
+
+  (tree "v5"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (-200 -70 ))
+    )
+  )
+
+)

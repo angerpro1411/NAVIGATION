@@ -1,0 +1,92 @@
+(scene 17.png
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 4642.5)
+      (coordinate (43.0,-130.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 365.5)
+      (coordinate (111.0,-77.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 1026.0)
+      (coordinate (-212.0,-79.5))
+    )
+  )
+
+  (House
+    (color "Green")
+    (pentagon
+      (perimeter 498.0)
+      (coordinate (-198.0,35.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (heptagon
+      (perimeter 1311.0)
+      (coordinate (1.0,-15.5))
+    )
+  )
+
+  (House
+    (color "Green")
+    (hexagon
+      (perimeter 8046.0)
+      (coordinate (-107.0,51.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 340.5)
+      (coordinate (111.0,101.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 939.0)
+      (coordinate (33.0,115.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 395.0)
+      (coordinate (-186.0,133.5))
+    )
+  )
+
+  (Undefined Object
+    (color "Green")
+    (heptagon
+      (perimeter 5270.0)
+      (coordinate (164.0,121.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 330.5)
+      (coordinate (-157.0,178.5))
+    )
+  )
+
+  (object's-number 11)
+)
