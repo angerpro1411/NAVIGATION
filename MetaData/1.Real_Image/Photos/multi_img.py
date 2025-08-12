@@ -133,17 +133,10 @@ def pixel_color(img,x,y) :
     #red
     redLower = np.array([136,87,111], np.uint8)
     redUpper = np.array([180,255,255], np.uint8)
-
-
+ 
     #green
-    # greenLower = np.array([25,40,72], np.uint8)
-    # greenUpper = np.array([102,255,255], np.uint8)
-
-    greenLower = np.array([15, 40, 50])
+    greenLower = np.array([15, 15, 50])
     greenUpper = np.array([179,116,104], np.uint8)    
-
-    # greenLower = np.array([35, 40, 60])
-    # greenUpper = np.array([85, 255, 255])    
 
     #blue
     blueLower = np.array([94,80,2], np.uint8)
@@ -382,7 +375,7 @@ cv2.createTrackbar("Espilonx10000","Parameters",0,1200,nothing)
 
 #create trackbar for contour Area
 cv2.createTrackbar("AreaMin","Parameters",500,5000,nothing)
-cv2.createTrackbar("AreaMax","Parameters",2500,10000,nothing)
+cv2.createTrackbar("AreaMax","Parameters",2500,15000,nothing)
 
 #create trackbar for Filter
 cv2.createTrackbar("Spatial Window","Parameters",45,100,nothing)
@@ -391,7 +384,7 @@ cv2.createTrackbar("Color Window","Parameters",60,100,nothing)
 # load the image and resize it to a smaller factor so that
 # the shapes can be approximated better
 
-fileName = "12.png"
+fileName = "17.png"
 
 image = cv2.imread(fileName)
 imageOrigin = image.copy()
@@ -415,11 +408,11 @@ image = adjustBrightness(image)
 # Large sp parameter creates heavy calculation, slow calculation
 #   ,so the computer could take a lot of time to calculate it.
 #       Even the program crashes.
-BackGrRmv_Or_ShiftFil = 1
-if (BackGrRmv_Or_ShiftFil == 0) :
+BackGrRmv_Or_ShiftFil = 0
+if (BackGrRmv_Or_ShiftFil == 1) :
     filtered = cv2.pyrMeanShiftFiltering(image, 30, 45)   
 else : 
-    filtered = backgr_removal(image) 
+    filtered = backgr_removal(image,65) 
 
 # applying different thresholding : START
 # techniques on the input image 
