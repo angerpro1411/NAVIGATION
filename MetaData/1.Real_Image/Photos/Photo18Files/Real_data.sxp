@@ -1,0 +1,44 @@
+(scene 18.png
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 2179.0)
+      (coordinate (-21.0,-133.0))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 4472.5)
+      (coordinate (-6.0,-38.0))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 2314.0)
+      (coordinate (50.0,28.0))
+    )
+  )
+
+  (Undefined Object
+    (color "Blue")
+    (circle
+      (perimeter 3347.0)
+      (coordinate (81.0,119.0))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1837.0)
+      (coordinate (-48.0,87.0))
+    )
+  )
+
+  (object's-number 5)
+)

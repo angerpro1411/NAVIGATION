@@ -1,0 +1,36 @@
+(scene 20.png
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 628.0)
+      (coordinate (9.0,-34.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 881.5)
+      (coordinate (-127.0,-30.5))
+    )
+  )
+
+  (Undefined Object
+    (color "Orange")
+    (circle
+      (perimeter 2050.0)
+      (coordinate (-46.0,78.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 1725.0)
+      (coordinate (-83.0,139.5))
+    )
+  )
+
+  (object's-number 4)
+)
