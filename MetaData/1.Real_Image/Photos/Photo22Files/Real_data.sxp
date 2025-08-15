@@ -1,0 +1,52 @@
+(scene 22.png
+
+  (Undefined Object
+    (color "No color")
+    (triangle
+      (perimeter 615.5)
+      (coordinate (107.5,-143.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 318.5)
+      (coordinate (-55.5,-125.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 269.0)
+      (coordinate (86.5,-89.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 391.5)
+      (coordinate (201.5,12.5))
+    )
+  )
+
+  (House
+    (color "White")
+    (hexagon
+      (perimeter 19113.0)
+      (coordinate (-75.5,4.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 253.5)
+      (coordinate (172.5,115.5))
+    )
+  )
+
+  (object's-number 6)
+)
