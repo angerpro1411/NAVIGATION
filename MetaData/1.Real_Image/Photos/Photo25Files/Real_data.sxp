@@ -1,0 +1,36 @@
+(scene 25.png
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1190.0)
+      (coordinate (58.0,-145.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1275.0)
+      (coordinate (-65.0,-46.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1293.5)
+      (coordinate (12.0,43.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 2424.0)
+      (coordinate (49.0,157.5))
+    )
+  )
+
+  (object's-number 4)
+)
