@@ -1,0 +1,14 @@
+(scene "35.png"
+
+  (Threshold-low 255
+   Threshold-high 255
+   kernel 3x3
+   Espilonx1000 227
+   AreaMin 876
+   AreaMax 4598
+   BackGroundRemoval 1 (threshold 80)
+   MeanShiftFiltering 0
+   SpatialWindow 30
+   ColorWindow 45 
+  )
+)

@@ -1,0 +1,28 @@
+(scene 32.png
+
+  (House
+    (color "No color")
+    (hexagon
+      (perimeter 18540.0)
+      (coordinate (-19.5,-24.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (heptagon
+      (perimeter 3756.5)
+      (coordinate (-14.5,87.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 543.5)
+      (coordinate (87.5,114.5))
+    )
+  )
+
+  (object's-number 3)
+)

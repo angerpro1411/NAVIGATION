@@ -1,0 +1,36 @@
+(scene 30.png
+
+  (House
+    (color "Green")
+    (square
+      (perimeter 3236.5)
+      (coordinate (21.5,-93.5))
+    )
+  )
+
+  (House
+    (color "Green")
+    (rectangle
+      (perimeter 3701.5)
+      (coordinate (-103.5,23.5))
+    )
+  )
+
+  (House
+    (color "Green")
+    (pentagon
+      (perimeter 2279.5)
+      (coordinate (-75.5,101.5))
+    )
+  )
+
+  (House
+    (color "Green")
+    (hexagon
+      (perimeter 1968.0)
+      (coordinate (142.5,111.5))
+    )
+  )
+
+  (object's-number 4)
+)

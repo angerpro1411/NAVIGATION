@@ -1,0 +1,30 @@
+(scene "31.png"
+
+  (object's-number 3)
+
+  (house "h1+"
+    (color "gray")
+    (polyline
+      (perimeter  )
+      (coordinate (-158 42))
+    )
+  )
+
+  (house "h2"
+    (color "gray")
+    (polyline
+      (perimeter  )
+      (coordinate (20 -20))
+    )
+  )  
+
+
+  (tree "v1+"
+    (color "Green")
+    (circle 
+      (perimeter  )
+      (coordinate (130 35))
+    )
+  )
+
+)
