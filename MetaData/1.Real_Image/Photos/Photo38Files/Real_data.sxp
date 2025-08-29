@@ -1,0 +1,68 @@
+(scene 38.png
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 3509.0)
+      (coordinate (-93.0,-115.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 4881.0)
+      (coordinate (-62.0,-57.5))
+    )
+  )
+
+  (Undefined Object
+    (color "Green")
+    (heptagon
+      (perimeter 1707.5)
+      (coordinate (-54.0,32.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 1041.5)
+      (coordinate (-12.0,64.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 9384.0)
+      (coordinate (64.0,-64.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (circle
+      (perimeter 680.0)
+      (coordinate (123.0,163.5))
+    )
+  )
+
+  (Undefined Object
+    (color "No color")
+    (heptagon
+      (perimeter 4307.5)
+      (coordinate (65.0,153.5))
+    )
+  )
+
+  (Tree
+    (color "Green")
+    (circle
+      (perimeter 305.0)
+      (coordinate (-108.0,120.5))
+    )
+  )
+
+  (object's-number 8)
+)
